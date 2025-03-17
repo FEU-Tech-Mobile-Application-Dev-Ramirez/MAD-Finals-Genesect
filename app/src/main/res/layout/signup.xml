@@ -148,6 +148,7 @@
             android:layout_marginTop="15dp"
             android:buttonTint="@color/white"
             android:text="@string/User"
+            android:minHeight="48dp"
             android:textColor="@color/white" />
 
         <CheckBox
@@ -156,6 +157,7 @@
             android:layout_marginBottom="15dp"
             android:buttonTint="@color/white"
             android:text="@string/Organizer"
+            android:minHeight="48dp"
             android:textColor="@color/white" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
