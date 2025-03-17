@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_view">
+
+
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_corner"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo"/>
+
+    <TextView
+        android:id="@+id/helloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello."
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        android:layout_below="@id/logoImage"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"/>
+
+
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/helloText"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="40dp"/>
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="30dp"
+        android:hint="Email or Mobile No."
+        android:textColor="@android:color/white"
+        android:textColorHint="#AAAAAA"
+        android:background="@drawable/signup_rounded_corner"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_below="@id/emailInput"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:textColor="@color/white"
+        android:textColorHint="#AAAAAA"
+        android:background="@drawable/signup_rounded_corner"
+        android:padding="10dp"
+        android:inputType="textPassword"/>
+
+    <CheckBox
+        android:id="@+id/userCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordInput"
+        android:buttonTint="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:minHeight="48dp"
+        android:text="User"
+        android:textColor="@color/white" />
+
+
+    <CheckBox
+        android:id="@+id/organizationCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userCheckbox"
+        android:buttonTint="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:minHeight="48dp"
+        android:text="Organization"
+        android:textColor="@color/white" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/organizationCheckbox"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/button_corner2"
+        android:text="Login"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_below="@id/loginButton"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_corner"
+        android:text="SignUp"
+        android:textColor="@color/black" />
+
+
+
+</RelativeLayout>
