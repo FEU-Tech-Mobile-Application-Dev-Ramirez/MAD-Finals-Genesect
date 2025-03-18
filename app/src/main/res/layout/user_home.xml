@@ -1,48 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/page_view">
 
-    <ImageView
-        android:id="@+id/Menu"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/ic_menu"
-        app:tint="@android:color/white" />
-
-
-
-    <TextView
-        android:id="@+id/tvUsername"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/homeheader"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="39dp"
-        android:text="User"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp">
 
-    <ImageView
-        android:id="@+id/imgProfile"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="-71dp"
-        android:layout_toStartOf="@id/tvUsername"
-        android:src="@drawable/ic_profile"
-        app:tint="@android:color/white" />
+        <ImageView
+            android:id="@+id/Menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_menu"
+            app:tint="@android:color/white" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_profile"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/imgBanner"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/tvUsername"
+        android:layout_below="@id/homeheader"
         android:layout_marginTop="16dp"
         android:scaleType="fitXY"
         android:background="@color/purple_700" />
@@ -127,7 +145,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="Date: --/--/----"
                         android:textColor="@android:color/white"
-                        android:textSize="10dp" />
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/tvTime1"
@@ -136,7 +154,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="Time: --:--"
                         android:textColor="@android:color/white"
-                        android:textSize="10dp" />
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/tvLocation1"
@@ -145,7 +163,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="Location: ----"
                         android:textColor="@android:color/white"
-                        android:textSize="10dp" />
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <ImageView
@@ -202,7 +220,6 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:orientation="vertical">
@@ -213,17 +230,18 @@
                         android:layout_height="wrap_content"
                         android:text="Date: --/--/----"
                         android:fontFamily="sans-serif-medium"
-                        android:textSize="10dp"
+                        android:textSize="10sp"
                         android:textColor="@android:color/white" />
 
                     <TextView
                         android:id="@+id/tvTime2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time: --:--"
                         android:fontFamily="sans-serif-medium"
+                        android:text="Time: --:--"
+                        android:textColor="@android:color/white"
                         android:textSize="10dp"
-                        android:textColor="@android:color/white" />
+                        tools:ignore="TextSizeCheck" />
 
                     <TextView
                         android:id="@+id/tvLocation2"
@@ -231,7 +249,7 @@
                         android:layout_height="wrap_content"
                         android:text="Location: ----"
                         android:fontFamily="sans-serif-medium"
-                        android:textSize="10dp"
+                        android:textSize="10sp"
                         android:textColor="@android:color/white" />
                 </LinearLayout>
 
@@ -293,7 +311,6 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:orientation="vertical">
