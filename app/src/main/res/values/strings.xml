@@ -9,4 +9,10 @@
     <string name="Organizer">Organizer</string>
     <string name="Back">Back</string>
     <string name="Next">Next</string>
+    <string name="SignUp">Signup</string>
+    <string name="Login">Login</string>
+    <string name="Organization">Organization</string>
+    <string name="Email_or_Mobile_No.">Email or Mobile No.</string>
+    <string name="Welcome_Back">Welcome Back!</string>
+    <string name="Hello">Hello.</string>
 </resources>
