@@ -48,7 +48,7 @@
         android:layout_marginHorizontal="40dp"
         android:layout_below="@id/welcomeText"
         android:layout_marginTop="30dp"
-        android:hint="@string/Email_or_Mobile_No."
+        android:hint="@string/Email"
         android:textColor="@android:color/white"
         android:textColorHint="#AAAAAA"
         android:background="@drawable/signup_rounded_corner"
