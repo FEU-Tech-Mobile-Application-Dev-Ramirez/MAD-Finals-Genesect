@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
         <TextView
             android:id="@+id/createacctext"
@@ -50,6 +50,7 @@
                     android:layout_height="15dp" />
 
                 <EditText
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signup_rounded_corner"
@@ -76,6 +77,7 @@
                     android:layout_height="15dp" />
 
                 <EditText
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signup_rounded_corner"
@@ -102,6 +104,7 @@
                     android:layout_height="15dp" />
 
                 <EditText
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signup_rounded_corner"
@@ -128,6 +131,7 @@
                     android:layout_height="15dp" />
 
                 <EditText
+                    android:id="@+id/confirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/signup_rounded_corner"
@@ -182,11 +186,11 @@
                         app:layout_constraintBottom_toBottomOf="parent" />
 
                     <Button
-                        android:id="@+id/button6"
+                        android:id="@+id/signupButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_corner2"
-                        android:text="@string/Next"
+                        android:text="@string/signup"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         tools:ignore="MissingConstraints"

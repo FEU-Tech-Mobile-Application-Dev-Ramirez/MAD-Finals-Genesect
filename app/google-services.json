@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "392761330285",
+    "project_id": "madcollaborative-d94cb53d",
+    "storage_bucket": "madcollaborative-d94cb53d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392761330285:android:519bd56a571d74c0264d64",
+        "android_client_info": {
+          "package_name": "com.example.mad_collaborative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6HSMwttEvHx6e1G3pFc0zro3WuvbAcyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
