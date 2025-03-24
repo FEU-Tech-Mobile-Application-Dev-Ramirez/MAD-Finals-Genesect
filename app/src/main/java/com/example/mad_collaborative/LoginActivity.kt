@@ -24,6 +24,14 @@ class LoginActivity : ComponentActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        binding.userCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) binding.organizerCheckbox.isChecked = false
+        }
+
+        binding.organizerCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) binding.userCheckbox.isChecked = false
+        }
+
         binding.signupButton.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }
@@ -57,10 +65,14 @@ class LoginActivity : ComponentActivity() {
 
                             if (role == "Admin") {
                                 navigateTo(AdminHomeActivity::class.java)
-                            } else if (!isUserChecked && !isOrganizerChecked) {
-                                showToast("Please select a role")
                             } else {
+                                if (!isUserChecked && !isOrganizerChecked) {
+                                    showToast("Please select a role")
+                                    return@addOnCompleteListener
+                                }
+
                                 val selectedRole = if (isUserChecked) "User" else "Organizer"
+
                                 if (selectedRole == role) {
                                     val targetActivity = when (selectedRole) {
                                         "User" -> UserHomeActivity::class.java
@@ -77,14 +89,6 @@ class LoginActivity : ComponentActivity() {
                 }
             }
         }
-
-        binding.userCheckbox.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.organizerCheckbox.isChecked = false
-        }
-
-        binding.organizerCheckbox.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) binding.userCheckbox.isChecked = false
-        }
     }
 
     private fun showToast(message: String) {
@@ -96,3 +100,4 @@ class LoginActivity : ComponentActivity() {
         finish()
     }
 }
+

@@ -29,6 +29,14 @@ class SignupActivity : ComponentActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
+        binding.userCheckbox2.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) binding.organizerCheckbox2.isChecked = false
+        }
+
+        binding.organizerCheckbox2.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) binding.userCheckbox2.isChecked = false
+        }
+
         binding.signupButton.setOnClickListener {
             val email = binding.email.text.toString().trim()
             val password = binding.password.text.toString().trim()
@@ -84,6 +92,8 @@ class SignupActivity : ComponentActivity() {
                 }
         }
     }
+
+
 
     private fun isValidPassword(password: String): Boolean {
         val passwordRegex = """^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%&!])[A-Za-z\d@#$%&!]{12,}$""".toRegex()
