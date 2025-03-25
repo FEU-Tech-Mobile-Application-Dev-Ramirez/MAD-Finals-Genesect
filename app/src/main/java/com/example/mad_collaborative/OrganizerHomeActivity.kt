@@ -79,16 +79,18 @@ class OrganizerHomeActivity : AppCompatActivity() {
         val storageRef = FirebaseStorage.getInstance().reference.child("event_images/${UUID.randomUUID()}.jpg")
 
         storageRef.putFile(imageUri)
-            .addOnSuccessListener {
+            .addOnSuccessListener { taskSnapshot ->
                 storageRef.downloadUrl.addOnSuccessListener { uri ->
                     events[position].imageUrl = uri.toString()
                     eventAdapter.notifyItemChanged(position)
-                    Toast.makeText(this, "Image uploaded successfully!", Toast.LENGTH_SHORT).show()
+
+                    Toast.makeText(this, "Image uploaded. Press 'Create' to save it.", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener {
                 Toast.makeText(this, "Image upload failed", Toast.LENGTH_SHORT).show()
             }
     }
+
 }
 

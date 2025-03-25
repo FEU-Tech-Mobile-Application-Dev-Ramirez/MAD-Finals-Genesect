@@ -76,10 +76,17 @@ class EventAdapter(private val events: MutableList<EventModel>, private val acti
         date: String,
         time: String,
         location: String,
-        imageUrl: String,
+        imageUrl: String?,
         binding: ItemEventBinding
     ) {
         val firestore = FirebaseFirestore.getInstance()
+
+
+        if (imageUrl.isNullOrEmpty()) {
+            Toast.makeText(binding.root.context, "Please select an image", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val eventData = hashMapOf(
             "date" to date,
             "time" to time,
@@ -88,13 +95,9 @@ class EventAdapter(private val events: MutableList<EventModel>, private val acti
             "isCreated" to true
         )
 
-        val eventRef = firestore.collection("events").document(event.id ?: firestore.collection("events").document().id)
-        eventRef.set(eventData)
-            .addOnSuccessListener {
-                event.date = date
-                event.time = time
-                event.location = location
-                event.imageUrl = imageUrl
+        firestore.collection("events").add(eventData)
+            .addOnSuccessListener { documentReference ->
+                event.id = documentReference.id
                 event.isCreated = true
 
                 binding.etDate.isEnabled = false
@@ -102,7 +105,7 @@ class EventAdapter(private val events: MutableList<EventModel>, private val acti
                 binding.etLocation.isEnabled = false
                 binding.btnAddImage.isEnabled = false
 
-                binding.btnJoin1.text = binding.root.context.getString(R.string.created)
+                binding.btnJoin1.text = "Created"
                 binding.btnJoin1.isEnabled = false
                 binding.btnJoin1.setBackgroundColor(Color.GRAY)
 
@@ -112,6 +115,8 @@ class EventAdapter(private val events: MutableList<EventModel>, private val acti
                 Toast.makeText(binding.root.context, "Failed to save event", Toast.LENGTH_SHORT).show()
             }
     }
+
+
 
     override fun getItemCount(): Int = events.size
 }

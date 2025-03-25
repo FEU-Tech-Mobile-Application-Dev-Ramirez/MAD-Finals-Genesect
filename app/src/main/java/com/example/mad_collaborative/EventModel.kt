@@ -7,4 +7,5 @@ data class EventModel(
     var imageUrl: String? = null,
     var isCreated: Boolean = false,
     var id: String? = null,
+    var isJoined: Boolean = false,
 )

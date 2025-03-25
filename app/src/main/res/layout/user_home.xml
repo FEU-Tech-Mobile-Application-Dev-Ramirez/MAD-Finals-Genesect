@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/page_view">
+    android:background="@drawable/page_view"
+    tools:context=".UserHomeActivity">
 
     <ScrollView
         android:layout_width="0dp"
@@ -124,26 +125,26 @@
                         android:orientation="vertical"
                         android:background="@color/black">
 
-                    <Button
-                        android:layout_width="65dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="150dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@drawable/button_cornerlg"
-                        android:text="Dota2"
-                        android:textColor="@color/white"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        <Button
+                            android:layout_width="65dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="150dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/button_cornerlg"
+                            android:text="Dota2"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/news1"
-                        android:textSize="14sp"
-                        android:textColor="@color/green"
-                        android:gravity="center"
-                        android:padding="20dp"
-                        android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/news1"
+                            android:textSize="14sp"
+                            android:textColor="@color/green"
+                            android:gravity="center"
+                            android:padding="20dp"
+                            android:textStyle="bold"/>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -159,104 +160,38 @@
                         android:orientation="vertical"
                         android:background="@color/black">
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="137dp"
-                        android:layout_marginTop="2dp"
-                        android:background="@drawable/button_cornerlg"
-                        android:text="Valorant"
-                        android:textColor="@color/white"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/news2"
-                        android:textSize="14sp"
-                        android:textColor="@color/green"
-                        android:gravity="center"
-                        android:padding="20dp"
-                        android:textStyle="bold"/>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-
-
-            <!-- Tournament Section -->
-            <LinearLayout
-                android:id="@+id/T1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnJoin1"
-                    android:layout_width="65dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="62.5dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/button_cornerlg"
-                    android:text="Join"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="340dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/tournament_corner"
-                    app:cardCornerRadius="20dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
+                        <Button
                             android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="137dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/button_cornerlg"
+                            android:text="Valorant"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="60dp"
-                            android:orientation="vertical">
+                            android:text="@string/news2"
+                            android:textSize="14sp"
+                            android:textColor="@color/green"
+                            android:gravity="center"
+                            android:padding="20dp"
+                            android:textStyle="bold"/>
 
-                            <TextView
-                                android:id="@+id/tvDate1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Date: --/--/----"
-                                android:textColor="@android:color/white"
-                                android:textSize="10sp" />
-
-                            <TextView
-                                android:id="@+id/tvTime1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Time: --:--"
-                                android:textColor="@android:color/white"
-                                android:textSize="10sp" />
-
-                            <TextView
-                                android:id="@+id/tvLocation1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Location: ----"
-                                android:textColor="@android:color/white"
-                                android:textSize="10sp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/imgTournament1"
-                            android:layout_width="230dp"
-                            android:layout_height="150dp"
-                            android:layout_marginStart="26dp"
-                            android:background="@color/purple_700" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_event" />
+
 
         </LinearLayout>
     </ScrollView>
