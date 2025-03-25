@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mad_collaborative">
 
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,19 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADCollaborative"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.firebase.database"
+            android:value="true" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.MADCollaborative">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".SignupActivity" android:exported="true"/>
         <activity android:name=".UserHomeActivity" android:exported="true"/>
-    </application>
+        <activity android:name=".OrganizerHomeActivity" android:exported="true"/>
 
+    </application>
 </manifest>

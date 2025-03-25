@@ -16,4 +16,9 @@
     <string name="Hello">Hello.</string>
     <string name="news1">The International 2025 will be held \nin Germany with veteran players returning \nand new comers alike, valve has also announced a \nnew coming hero coming this fall.</string>
     <string name="news2">Coming this winter, the brand \nnew release of the Araxys bundle, \nfeaturing the sheriff, vandal and phantom.</string>
+    <string name="create">Create</string>
+    <string name="created">Created</string>
+    <string name="fill_all_fields">Please fill all fields and select an image</string>
+    <string name="event_saved">Event saved successfully!</string>
+    <string name="event_failed">Failed to save event</string>
 </resources>

@@ -318,7 +318,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/menu/baseline_menu_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/add_circle_outline/baseline_add_circle_outline_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -328,8 +328,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="e5deea" />
-                            <entry key="outputName" value="ic_menu" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="add_button" />
                             <entry key="sourceFile" value="C:\Users\aresd\AndroidStudioProjects\MAD-Finals-Genesect" />
                           </map>
                         </option>
