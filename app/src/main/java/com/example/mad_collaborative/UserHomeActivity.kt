@@ -7,6 +7,11 @@ import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mad_collaborative.databinding.UserHomeBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
+
+
+
 
 class UserHomeActivity : ComponentActivity() {
     private lateinit var binding: UserHomeBinding
@@ -32,6 +37,29 @@ class UserHomeActivity : ComponentActivity() {
         binding.btnTournaments.setOnClickListener {
             binding.newsSection.visibility = View.GONE
             binding.recyclerView.visibility = View.VISIBLE
+        }
+
+        val auth = FirebaseAuth.getInstance()
+        val firestore = FirebaseFirestore.getInstance()
+        val currentUser = auth.currentUser
+
+        if (currentUser != null) {
+            firestore.collection("users").document(currentUser.uid).get()
+                .addOnSuccessListener { document ->
+                    val currentUsername = document.getString("username") ?: "Unknown"
+                    val currentUserRole = document.getString("role") ?: "Unknown"
+                    val currentUserEmail = document.getString("email") ?: "Unknown"
+
+                    binding.tvUsername.text = currentUsername
+
+                    binding.btnMenu.setOnClickListener {
+                        val intent = Intent(this, MenuActivity::class.java)
+                        intent.putExtra("username", currentUsername)
+                        intent.putExtra("role", currentUserRole)
+                        intent.putExtra("email", currentUserEmail)
+                        startActivity(intent)
+                    }
+                }
         }
 
 

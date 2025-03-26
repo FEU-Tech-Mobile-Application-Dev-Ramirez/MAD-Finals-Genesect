@@ -29,7 +29,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/Menu"
+                    android:id="@+id/btnMenu"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_marginStart="8dp"
@@ -75,7 +75,6 @@
                 android:background="@drawable/homeimg"
                 android:scaleType="fitXY" />
 
-            <!-- Tab Buttons -->
             <LinearLayout
                 android:id="@+id/tabButtons"
                 android:layout_width="match_parent"
