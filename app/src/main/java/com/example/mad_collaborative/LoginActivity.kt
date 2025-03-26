@@ -65,7 +65,8 @@ class LoginActivity : ComponentActivity() {
 
                             if (role == "Admin") {
                                 navigateTo(AdminHomeActivity::class.java)
-                            } else {
+                            }
+                            else {
                                 if (!isUserChecked && !isOrganizerChecked) {
                                     showToast("Please select a role")
                                     return@addOnCompleteListener
@@ -100,4 +101,5 @@ class LoginActivity : ComponentActivity() {
         finish()
     }
 }
+
 
