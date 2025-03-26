@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/createacctext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Create_Your_Account"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="10dp"
+        android:textSize="35sp"
+        android:textColor="@color/green"/>
+
+    <LinearLayout
+        android:id="@+id/details_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                android:background="@drawable/signupbg"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Username"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <EditText
+                    android:id="@+id/etAdminUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signup_rounded_corner"
+                    android:drawableEnd="@drawable/done_icon"
+                    android:hint="@string/Username"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:textSize="15sp"
+                    tools:ignore="TextFields" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/Email"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <EditText
+                    android:id="@+id/etAdminEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signup_rounded_corner"
+                    android:drawableEnd="@drawable/done_icon"
+                    android:hint="@string/Email"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:textSize="15sp"
+                    tools:ignore="TextFields" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/Password"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <EditText
+                    android:id="@+id/etAdminPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signup_rounded_corner"
+                    android:drawableEnd="@drawable/password_icon"
+                    android:hint="@string/Password"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:textSize="15sp"
+                    tools:ignore="TextFields" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/Confirm_Password"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <EditText
+                    android:id="@+id/etConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/signup_rounded_corner"
+                    android:drawableEnd="@drawable/password_icon"
+                    android:hint="@string/Confirm_Password"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:textSize="15sp"
+                    tools:ignore="TextFields" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp">
+
+                    <Button
+                        android:id="@+id/BackToAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_corner"
+                        android:text="@string/Back"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <Button
+                        android:id="@+id/btnCreateAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_corner2"
+                        android:text="@string/signup"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

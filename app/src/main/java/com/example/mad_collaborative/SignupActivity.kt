@@ -63,7 +63,7 @@ class SignupActivity : ComponentActivity() {
             }
 
             if (!isValidPassword(password)) {
-                Toast.makeText(this, "Invalid password: Must be 12+ characters, include 1 uppercase, 1 lowercase, 1 special character (@#\$%&!), and no invalid symbols (^'<>/)", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Invalid password: Must be 12+ characters, include 1 upper, 1 lower, 1 special, and no invalid symbols", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
