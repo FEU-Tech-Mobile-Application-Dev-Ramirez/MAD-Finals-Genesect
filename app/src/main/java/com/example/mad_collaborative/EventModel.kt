@@ -8,4 +8,6 @@ data class EventModel(
     var isCreated: Boolean = false,
     var id: String? = null,
     var isJoined: Boolean = false,
+    var participants: List<String> = mutableListOf(),
+    var eventName: String = "",
 )

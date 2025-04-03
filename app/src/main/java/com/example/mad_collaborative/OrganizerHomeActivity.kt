@@ -22,6 +22,7 @@ class OrganizerHomeActivity : AppCompatActivity() {
     private var selectedEventPosition: Int = -1
     private val firestore = FirebaseFirestore.getInstance()
 
+
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +61,10 @@ class OrganizerHomeActivity : AppCompatActivity() {
                 }
         }
 
+        binding.btnParticipants.setOnClickListener {
+            val intent = Intent(this, ParticipantsActivity::class.java)
+            startActivity(intent)
+        }
         setupImagePicker()
         loadEventsFromFirestore()
     }

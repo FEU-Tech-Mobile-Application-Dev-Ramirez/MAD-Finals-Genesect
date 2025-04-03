@@ -37,7 +37,9 @@
         <activity android:name=".OrganizerHomeActivity" android:exported="true"/>
         <activity android:name=".AdminHomeActivity" android:exported="true"/>
         <activity android:name=".AdminSignupActivity" android:exported="true"/>
-        <activity android:name=".MenuActivity" />
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".ParticipantsActivity" android:exported="true"/>
+
 
 
     </application>

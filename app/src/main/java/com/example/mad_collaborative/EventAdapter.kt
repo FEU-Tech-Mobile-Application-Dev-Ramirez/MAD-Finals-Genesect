@@ -67,11 +67,11 @@ class EventAdapter(private val events: MutableList<EventModel>, private val acti
                 return@setOnClickListener
             }
 
-            uploadEventToFirestore(event, date, time, location, imageUrl, binding)
+            assignEventNameAndUpload(event, date, time, location, imageUrl, binding)
         }
     }
 
-    private fun uploadEventToFirestore(
+    private fun assignEventNameAndUpload(
         event: EventModel,
         date: String,
         time: String,
@@ -82,41 +82,45 @@ class EventAdapter(private val events: MutableList<EventModel>, private val acti
         val firestore = FirebaseFirestore.getInstance()
 
 
-        if (imageUrl.isNullOrEmpty()) {
-            Toast.makeText(binding.root.context, "Please select an image", Toast.LENGTH_SHORT).show()
-            return
-        }
+        firestore.collection("events").get()
+            .addOnSuccessListener { documents ->
+                val eventCount = documents.size() + 1
+                val eventName = eventCount.toString()
 
-        val eventData = hashMapOf(
-            "date" to date,
-            "time" to time,
-            "location" to location,
-            "imageUrl" to imageUrl,
-            "isCreated" to true
-        )
+                val eventData = hashMapOf(
+                    "eventName" to eventName,
+                    "date" to date,
+                    "time" to time,
+                    "location" to location,
+                    "imageUrl" to imageUrl,
+                    "isCreated" to true
+                )
 
-        firestore.collection("events").add(eventData)
-            .addOnSuccessListener { documentReference ->
-                event.id = documentReference.id
-                event.isCreated = true
+                firestore.collection("events").add(eventData)
+                    .addOnSuccessListener { documentReference ->
+                        event.id = documentReference.id
+                        event.isCreated = true
+                        event.eventName = eventName
 
-                binding.etDate.isEnabled = false
-                binding.etTime.isEnabled = false
-                binding.etLocation.isEnabled = false
-                binding.btnAddImage.isEnabled = false
+                        binding.etDate.isEnabled = false
+                        binding.etTime.isEnabled = false
+                        binding.etLocation.isEnabled = false
+                        binding.btnAddImage.isEnabled = false
 
-                binding.btnJoin1.text = "Created"
-                binding.btnJoin1.isEnabled = false
-                binding.btnJoin1.setBackgroundColor(Color.GRAY)
+                        binding.btnJoin1.text = "Created"
+                        binding.btnJoin1.isEnabled = false
+                        binding.btnJoin1.setBackgroundColor(Color.GRAY)
 
-                Toast.makeText(binding.root.context, "Event saved successfully!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(binding.root.context, "Event saved successfully!", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(binding.root.context, "Failed to save event", Toast.LENGTH_SHORT).show()
+                    }
             }
             .addOnFailureListener {
-                Toast.makeText(binding.root.context, "Failed to save event", Toast.LENGTH_SHORT).show()
+                Toast.makeText(binding.root.context, "Failed to get event count", Toast.LENGTH_SHORT).show()
             }
     }
-
-
 
     override fun getItemCount(): Int = events.size
 }
